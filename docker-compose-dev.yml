@@ -1,6 +1,6 @@
 version: '2'
 services:
-  revp:
+  nginx:
     image: nginx:latest
     volumes:
       - "./www:/usr/share/nginx/html:ro"

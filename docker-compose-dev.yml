@@ -12,11 +12,6 @@ services:
       - "443:443"
     links:
       - registry:registry
-      - app:app
-    depends_on:
-      - app
-  app:
-    image: app.agrito.id/agritoforadmin:dev
   registry:
     image: registry:2
     ports:

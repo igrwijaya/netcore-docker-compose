@@ -9,9 +9,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
-  #   links:
-  #     - app:app
-  #   depends_on:
-  #     - app
-  # app:
-  #   image: repo.treescale.com/igrwijaya/agrito-webapp:dev
+    links:
+      - app:app
+    depends_on:
+      - app
+  app:
+    image: repo.treescale.com/igrwijaya/agrito-webapp:dev

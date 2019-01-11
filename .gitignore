@@ -16,11 +16,11 @@
 /tmp/*
 
 # exclude everything
-/certs/*
-/www/.well-known/acme-challenge/*
+#/certs/*
+#/www/.well-known/acme-challenge/*
 /reg-data/*
 
 # exception to the rule
-!/certs/.gitkeep 
-!/www/.well-known/acme-challenge/.gitkeep
+#!/certs/.gitkeep 
+#!/www/.well-known/acme-challenge/.gitkeep
 !/reg-data/.gitkeep

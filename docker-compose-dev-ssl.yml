@@ -1,0 +1,11 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./www:/usr/share/nginx/html:ro"
+      - "./nginx-ssl.conf:/etc/nginx/nginx.conf:ro"
+      - "./certs:/usr/share/certs:ro"
+    ports:
+      - "80:80"
+      - "443:443"

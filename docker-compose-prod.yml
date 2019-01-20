@@ -2,6 +2,10 @@ version: '2'
 services:
   nginx:
     image: nginx:latest
+    networks:
+      - gores_network
+    external_links:
+      - sqlserver:sqlserver
     volumes:
       - "./www:/usr/share/nginx/html:ro"
       - "./nginx-nossl.conf:/etc/nginx/nginx.conf:ro"
@@ -13,3 +17,7 @@ services:
       - app
   app:
     image: gdwebapi/goresdigitalapi:prod
+
+networks:
+  gores_network:
+    external: true

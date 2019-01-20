@@ -1,0 +1,12 @@
+version: '2'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - 5432:5432
+    networks:
+      - gores_network
+
+networks:
+  gores_network:
+    external: true

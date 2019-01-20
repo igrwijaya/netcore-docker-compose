@@ -3,7 +3,7 @@ services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2017-latest
     ports:
-      - 5432:5432
+      - 1433:1433
     networks:
       - gores_network
 

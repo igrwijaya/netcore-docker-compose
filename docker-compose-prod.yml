@@ -17,6 +17,8 @@ services:
       - app
   app:
     image: gdwebapi/goresdigitalapi:prod
+    networks:
+      - gores_network
 
 networks:
   gores_network:

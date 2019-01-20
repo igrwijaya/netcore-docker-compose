@@ -1,0 +1,15 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./www:/usr/share/nginx/html:ro"
+      - "./nginx-nossl.conf:/etc/nginx/nginx.conf:ro"
+    ports:
+      - "80:80"
+    links:
+      - app:app
+    depends_on:
+      - app
+  app:
+    image: gdwebapi/goresdigitalapi:prod

@@ -14,4 +14,4 @@ services:
     depends_on:
       - app
   app:
-    image: gdwebapi/goresdigitalapi:dev
+    image: gdwebapi/goresdigitalapi:prod

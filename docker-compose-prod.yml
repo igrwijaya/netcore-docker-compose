@@ -11,11 +11,5 @@ services:
       - app:app
     depends_on:
       - app
-      - db
   app:
     image: gdwebapi/goresdigitalapi:prod
-  db:
-    image: "mcr.microsoft.com/mssql/server:2017-latest"
-    environment:
-      SA_PASSWORD: "#onS2aQ*"
-      ACCEPT_EULA: "Y"

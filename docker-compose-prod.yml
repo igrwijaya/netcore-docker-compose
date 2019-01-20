@@ -2,10 +2,6 @@ version: '2'
 services:
   nginx:
     image: nginx:latest
-    networks:
-      - gores_network
-    external_links:
-      - sqlserver:sqlserver
     volumes:
       - "./www:/usr/share/nginx/html:ro"
       - "./nginx-nossl.conf:/etc/nginx/nginx.conf:ro"
@@ -15,11 +11,11 @@ services:
       - app:app
     depends_on:
       - app
+      - db
   app:
     image: gdwebapi/goresdigitalapi:prod
-    networks:
-      - gores_network
-
-networks:
-  gores_network:
-    external: true
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      SA_PASSWORD: "#onS2aQ*"
+      ACCEPT_EULA: "Y"

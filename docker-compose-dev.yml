@@ -7,5 +7,24 @@ services:
       - "./nginx-nossl.conf:/etc/nginx/nginx.conf:ro"
     ports:
       - "80:80"
+    networks:
+      - SkNetwork
+
   app:
+    image: sisaka
+    container_name: app
+    expose:
+      - "80"
+    networks:
+      - SkNetwork
+
+  gisaka:
     image: devteamsanurkauh/web-api:dev
+    container_name: gisaka
+    expose:
+      - "80"
+    networks:
+      - SkNetwork
+
+networks:
+  SkNetwork:

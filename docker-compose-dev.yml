@@ -7,3 +7,5 @@ services:
       - "./nginx-nossl.conf:/etc/nginx/nginx.conf:ro"
     ports:
       - "80:80"
+  app:
+    image: devteamsanurkauh/web-api:dev

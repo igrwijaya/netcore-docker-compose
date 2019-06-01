@@ -1,0 +1,45 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./www:/usr/share/nginx/html:ro"
+      - "./nginx-no-ssl.conf:/etc/nginx/nginx.conf:ro"
+      - "./certs:/usr/share/certs:ro"
+    ports:
+      - "80:80"
+    networks:
+      - AgritoNetwork
+
+  agrito-prod:
+    image: repo.treescale.com/igrwijaya/agrito-webapp:latest
+    container_name: agrito-prod
+    expose:
+      - "1883"
+    ports:
+      - "1883:1883"
+    networks:
+      - AgritoNetwork
+
+  agrito-dev:
+    image: repo.treescale.com/igrwijaya/agrito-webapp:dev
+    container_name: agrito-dev
+    expose:
+      - "1883"
+    ports:
+      - "1883:1883"
+    networks:
+      - AgritoNetwork
+
+  agrito-hotfix:
+    image: repo.treescale.com/igrwijaya/agrito-webapp:hotfix
+    container_name: agrito-hotfix
+    expose:
+      - "1883"
+    ports:
+      - "1883:1883"
+    networks:
+      - AgritoNetwork
+
+networks:
+  AgritoNetwork:

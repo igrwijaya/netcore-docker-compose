@@ -15,9 +15,9 @@ services:
     image: repo.treescale.com/igrwijaya/agrito-webapp:latest
     container_name: agrito-prod
     expose:
-      - "1883"
+      - "2045"
     ports:
-      - "1883:1883"
+      - "2045:2045"
     networks:
       - AgritoNetwork
 
@@ -25,9 +25,9 @@ services:
     image: repo.treescale.com/igrwijaya/agrito-webapp:dev
     container_name: agrito-dev
     expose:
-      - "1883"
+      - "1994"
     ports:
-      - "1883:1883"
+      - "1994:1994"
     networks:
       - AgritoNetwork
 
@@ -35,9 +35,9 @@ services:
     image: repo.treescale.com/igrwijaya/agrito-webapp:hotfix
     container_name: agrito-hotfix
     expose:
-      - "1883"
+      - "1945"
     ports:
-      - "1883:1883"
+      - "1945:1945"
     networks:
       - AgritoNetwork
 

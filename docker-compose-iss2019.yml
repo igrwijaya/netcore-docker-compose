@@ -1,0 +1,17 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./www:/usr/share/nginx/html:ro"
+      - "./nginx-no-https.conf:/etc/nginx/nginx.conf:ro"
+      - "./certs:/usr/share/certs:ro"
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - app:app
+    depends_on:
+      - app
+  app:
+    image: repo.treescale.com/igrwijaya/agrito-webapp:iss2019

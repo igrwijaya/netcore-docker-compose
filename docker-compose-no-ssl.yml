@@ -1,6 +1,6 @@
 version: '2'
 services:
-  nginx:
+  nginx-server:
     image: nginx:latest
     container_name: nginx-server
     volumes:

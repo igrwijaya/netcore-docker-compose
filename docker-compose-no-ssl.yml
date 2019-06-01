@@ -2,6 +2,7 @@ version: '2'
 services:
   nginx:
     image: nginx:latest
+    container_name: nginx-server
     volumes:
       - "./www:/usr/share/nginx/html:ro"
       - "./nginx-no-ssl.conf:/etc/nginx/nginx.conf:ro"

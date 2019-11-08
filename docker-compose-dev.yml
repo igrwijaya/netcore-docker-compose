@@ -11,7 +11,7 @@ services:
       - SkNetwork
 
   app:
-    image: sisaka
+    image: devteamsanurkauh/website:latest
     container_name: app
     expose:
       - "80"
